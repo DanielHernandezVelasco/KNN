@@ -70,6 +70,9 @@ public class Knn {
             }
         }
         newPoint.setC(color.get(index));
+        for(int i=K;i<patterns.size();i++){
+            patterns.get(i).setC(Color.GRAY);
+        }
     }
     /*public static void main(String[] args) {
         Knn knn= new Knn(new Point(50,5,Color.BLUE),10,3);
