@@ -44,19 +44,19 @@ public class Knn {
     public void run(){
         
         patterns=Utils.randomPatterns(numPatterns);
-        ArrayList<Color> ts = new ArrayList<>();
+        ArrayList<Color> color = new ArrayList<>();
         
         for(Point e : patterns){
             e.setDistance(Utils.getEuclideanDistance(e, newPoint));
-            if(!ts.contains(e.getC()))
-                ts.add(e.getC());
+            if(!color.contains(e.getC()))
+                color.add(e.getC());
         }
-        int[] counters = new int[ts.size()];
+        int[] counters = new int[color.size()];
         Utils.zeros(counters);
         Utils.sortByDist(patterns);
         for(int i = 0; i<K;i++){
-            for (int j=0;j<ts.size();j++){
-                if(patterns.get(i).getC()==ts.get(j)){
+            for (int j=0;j<color.size();j++){
+                if(patterns.get(i).getC()==color.get(j)){
                     counters[j]++;
                 }
             }
@@ -69,7 +69,7 @@ public class Knn {
                 index=i;
             }
         }
-        newPoint.setC(ts.get(index));
+        newPoint.setC(color.get(index));
     }
     /*public static void main(String[] args) {
         Knn knn= new Knn(new Point(50,5,Color.BLUE),10,3);
