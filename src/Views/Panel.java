@@ -25,9 +25,7 @@ public class Panel extends JPanel implements MouseListener{
     public Panel(){
         addMouseListener(this);
     }
-    private void MousePressed(MouseEvent evt) {
-        
-    }
+    
 
     public int getK() {
         return k;
@@ -76,9 +74,8 @@ public class Panel extends JPanel implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getButton()==1){
-            newPoint = new Point(e.getX(),e.getY(),Color.BLACK);
-            
-            System.out.println(newPoint.getX()+"");
+            newPoint = new Point(e.getX(),e.getY(),Color.BLACK);          
+            System.out.println(newPoint.getX()+","+newPoint.getY());
             this.repaint();
         }
     }
