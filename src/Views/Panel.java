@@ -21,11 +21,17 @@ import javax.swing.JPanel;
 public class Panel extends JPanel implements MouseListener{
     private ArrayList<Point> patterns=null;
     private Point newPoint=null;
+    private ArrayList<Point> newPoints = new ArrayList<>();
     private int k;
     public Panel(){
         addMouseListener(this);
     }
-    
+    public void setNewPoints(ArrayList<Point> np){
+        this.newPoints=np;
+    }
+    public ArrayList<Point> getNewPoints(){
+        return newPoints;
+    }
 
     public int getK() {
         return k;
@@ -63,9 +69,11 @@ public class Panel extends JPanel implements MouseListener{
                 g.fillOval(p.getX(), p.getY(), 6, 6);
             }
         }
-        if(newPoint!=null){
-            g.setColor(newPoint.getC());
-            g.fillOval(newPoint.getX(), newPoint.getY(), 11, 11);
+        if(newPoints!=null){
+            for(Point p: newPoints){
+                g.setColor(p.getC());
+                g.fillOval(p.getX(), p.getY(), 11, 11);
+            }
         }
         
         repaint();
@@ -74,8 +82,10 @@ public class Panel extends JPanel implements MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         if(e.getButton()==1){
-            newPoint = new Point(e.getX(),e.getY(),Color.BLACK);          
-            System.out.println(newPoint.getX()+","+newPoint.getY());
+            if(newPoints==null){
+                newPoints = new ArrayList<>();
+            }
+            newPoints.add(new Point(e.getX(),e.getY(),Color.BLACK));
             this.repaint();
         }
     }
