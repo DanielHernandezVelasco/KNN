@@ -58,6 +58,17 @@ public class Utils{
         return d;
     }
     
+    public static int chebyshevDistance(Point p1, Point p2){
+        int d;
+        d= Math.max(Math.abs(p1.getX()-p2.getX()),Math.abs(p1.getY()-p2.getY()));
+        return d;
+    }
+    public static int brayDistance(Point p1, Point p2){
+        int d;
+        d = (Math.abs(p1.getX()-p2.getX())+Math.abs(p1.getY()-p2.getY()))/((p1.getX()+p2.getX())+(p1.getY()+p2.getY()));
+        return d;
+    }
+    
     
     /**
      * Sort all patterns with the attribute called distance, from

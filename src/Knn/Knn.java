@@ -116,8 +116,20 @@ public class Knn {
                 }
                 break;
             case 2:
+                for (Point e : patterns) {
+                    e.setDistance(Utils.chebyshevDistance(e, newPoint));
+                    if (!color.contains(e.getC())) {
+                        color.add(e.getC());
+                    }
+                }
                 break;
             case 3:
+                for (Point e : patterns) {
+                    e.setDistance(Utils.brayDistance(e, newPoint));
+                    if (!color.contains(e.getC())) {
+                        color.add(e.getC());
+                    }
+                }
                 break;
             case 4:
                 break;

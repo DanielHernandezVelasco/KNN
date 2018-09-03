@@ -153,9 +153,11 @@
     <Component class="javax.swing.JComboBox" name="kindOfDistance">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="4">
             <StringItem index="0" value="Distancia euclideana"/>
             <StringItem index="1" value="Distancia Manhattan"/>
+            <StringItem index="2" value="Distancia Chebyshev"/>
+            <StringItem index="3" value="Distancia Bray"/>
           </StringArray>
         </Property>
       </Properties>

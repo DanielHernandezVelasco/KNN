@@ -92,7 +92,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        kindOfDistance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Distancia euclideana", "Distancia Manhattan" }));
+        kindOfDistance.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Distancia euclideana", "Distancia Manhattan", "Distancia Chebyshev", "Distancia Bray" }));
 
         jButton2.setText("Reset");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
